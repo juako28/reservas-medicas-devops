@@ -1,0 +1,16 @@
+# Configuracion privada y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Archivos locales y evidencias del informe
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+evidencias/
+*.log
+*.zip
+__pycache__/

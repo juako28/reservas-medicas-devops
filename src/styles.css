@@ -1,0 +1,103 @@
+/* Estilos básicos de la página */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #eeeeee;
+}
+
+.contenedor {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #cccccc;
+}
+
+header {
+  padding: 12px;
+  text-align: center;
+  color: white;
+  background-color: #28608e;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+header p {
+  margin: 5px 0 0;
+}
+
+h2 {
+  margin-top: 22px;
+  font-size: 19px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.estado {
+  color: #28612c;
+}
+
+.campo {
+  margin-bottom: 14px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+  color: #333;
+  background-color: white;
+  border: 1px solid #aaaaaa;
+}
+
+button {
+  padding: 9px 18px;
+  font: inherit;
+  color: white;
+  background-color: #28608e;
+  border: 1px solid #1c4568;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1c4568;
+}
+
+#resultado {
+  padding: 10px;
+  background-color: #e8f3e8;
+  border: 1px solid #abc9ab;
+}
+
+footer {
+  margin-top: 25px;
+  padding-top: 10px;
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  border-top: 1px solid #cccccc;
+}
+
+footer p {
+  margin: 4px 0;
+}

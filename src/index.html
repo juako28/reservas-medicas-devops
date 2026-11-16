@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de horas médicas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+      <h1>Centro Médico Alameda</h1>
+      <p>Reserva de horas médicas</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="titulo-informacion">
+        <h2 id="titulo-informacion">Información de atención</h2>
+        <ul>
+          <li>Horario: lunes a viernes de 09:00 a 18:00 horas.</li>
+          <li>Especialidades: medicina general, pediatría y medicina interna.</li>
+          <li>Modalidad: atención presencial.</li>
+        </ul>
+        <p class="estado"><strong>Estado del servicio:</strong> página de reservas cargada.</p>
+      </section>
+
+      <section aria-labelledby="titulo-formulario">
+        <h2 id="titulo-formulario">Formulario de reserva</h2>
+        <p>Completa los campos para solicitar una hora médica.</p>
+
+        <form id="reserva-form" autocomplete="off">
+          <div class="campo">
+            <label for="paciente">Nombre del paciente</label>
+            <input id="paciente" type="text" placeholder="Ingresa tu nombre"
+                   minlength="3" maxlength="60" required>
+          </div>
+
+          <div class="campo">
+            <label for="especialidad">Especialidad</label>
+            <select id="especialidad" required>
+              <option value="">Selecciona una especialidad</option>
+              <option>Medicina general</option>
+              <option>Pediatría</option>
+              <option>Medicina interna</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="fecha">Fecha de atención</label>
+            <input id="fecha" type="date" required>
+          </div>
+
+          <div class="campo">
+            <label for="horario">Horario</label>
+            <select id="horario" required>
+              <option value="">Selecciona un horario</option>
+              <option>09:00</option>
+              <option>10:30</option>
+              <option>12:00</option>
+              <option>15:30</option>
+              <option>17:00</option>
+            </select>
+          </div>
+
+          <button id="reservar" type="button">Reservar hora</button>
+          <p id="resultado" role="status" aria-live="polite" tabindex="-1" hidden></p>
+          <noscript><p>Activa JavaScript para completar el formulario.</p></noscript>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Centro Médico Alameda</p>
+    </footer>
+  </div>
+</body>
+</html>

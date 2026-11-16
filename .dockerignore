@@ -1,0 +1,12 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+evidencias
+*.zip
+*.log
+.vscode
+.idea
+README.md
+docs
