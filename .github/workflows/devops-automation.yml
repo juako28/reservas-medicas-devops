@@ -1,0 +1,39 @@
+name: Validacion del servicio local
+
+on:
+  push:
+    branches: [main, 'feature/**', 'fix/**', 'docs/**']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obtener el codigo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validar Compose
+        run: docker compose config --quiet
+      - name: Construir e iniciar el servicio de prueba
+        run: docker compose up -d --build --wait --wait-timeout 90
+      - name: Comprobar respuesta y contenido
+        run: |
+          curl --fail --silent --show-error http://localhost:8080/healthz | grep -Fx ok
+          curl --fail --silent --show-error http://localhost:8080/ | grep -F 'id="reserva-form"'
+          curl --fail --silent --show-error http://localhost:8080/styles.css > /dev/null
+          curl --fail --silent --show-error http://localhost:8080/app.js > /dev/null
+      - name: Mostrar diagnostico
+        if: always()
+        run: |
+          docker compose ps -a
+          docker compose logs --no-color --tail 50
+      - name: Limpiar el entorno temporal
+        if: always()
+        run: docker compose down
